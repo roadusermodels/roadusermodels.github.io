@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Workshop 2026</title>
+  <meta name="description" content="A concise academic workshop website hosted on GitHub Pages." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-dark: #1e40af;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb 55%, #60a5fa);
+      color: white;
+      padding: 72px 20px 64px;
+      text-align: center;
+    }
+
+    header h1 {
+      max-width: 920px;
+      margin: 0 auto 18px;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 1.2rem;
+      opacity: 0.94;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(8px);
+      font-weight: 600;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: white;
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    nav .inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 42px 20px 64px;
+    }
+
+    section {
+      margin: 0 0 34px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fbfdff;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .mini-card p,
+    .muted {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    footer {
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 54px 18px 48px; }
+      .card { padding: 22px; }
+      nav .inner { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Workshop on Human-Centred AI Systems</h1>
+    <p>A one-day academic workshop bringing together researchers and practitioners working on safe, meaningful, and human-centred AI.</p>
+    <div class="meta">
+      <span class="pill">June 15, 2026</span>
+      <span class="pill">Amsterdam, The Netherlands</span>
+      <span class="pill">Hybrid format</span>
+    </div>
+    <a class="button" href="#submit">Submit your paper</a>
+  </header>
+
+  <nav>
+    <div class="inner">
+      <a href="#about">About</a>
+      <a href="#dates">Dates</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#program">Program</a>
+      <a href="#submit">Submit</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="about" class="card">
+      <h2>About the workshop</h2>
+      <p>
+        This workshop explores how AI systems can be designed, evaluated, and governed in ways that preserve meaningful human agency and support responsible real-world deployment. We welcome empirical, theoretical, design, and policy-oriented contributions.
+      </p>
+    </section>
+
+    <section id="dates" class="card">
+      <h2>Important dates</h2>
+      <div class="grid">
+        <div class="mini-card">
+          <h3>Submission deadline</h3>
+          <p>March 30, 2026</p>
+        </div>
+        <div class="mini-card">
+          <h3>Notification</h3>
+          <p>April 27, 2026</p>
+        </div>
+        <div class="mini-card">
+          <h3>Camera-ready deadline</h3>
+          <p>May 18, 2026</p>
+        </div>
+        <div class="mini-card">
+          <h3>Workshop date</h3>
+          <p>June 15, 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="speakers" class="card">
+      <h2>Invited speakers</h2>
+      <div class="grid">
+        <div class="mini-card">
+          <h3>Speaker Name</h3>
+          <p>University or Organization</p>
+        </div>
+        <div class="mini-card">
+          <h3>Speaker Name</h3>
+          <p>University or Organization</p>
+        </div>
+        <div class="mini-card">
+          <h3>Speaker Name</h3>
+          <p>University or Organization</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="card">
+      <h2>Preliminary program</h2>
+      <ul>
+        <li>09:00 — Welcome and opening remarks</li>
+        <li>09:30 — Keynote talk</li>
+        <li>10:30 — Paper session I</li>
+        <li>12:00 — Lunch</li>
+        <li>13:30 — Interactive working groups</li>
+        <li>15:30 — Paper session II</li>
+        <li>17:00 — Closing discussion</li>
+      </ul>
+    </section>
+
+    <section id="submit" class="card">
+      <h2>Call for papers</h2>
+      <p>
+        We invite short papers, position papers, work-in-progress reports, and demos. Submissions should be 2–4 pages, excluding references, and formatted according to the template of the host conference.
+      </p>
+      <p>
+        <a class="button" href="https://example.com" target="_blank" rel="noopener">Submission portal</a>
+      </p>
+      <p class="muted">Replace the button link with your EasyChair, OpenReview, Google Form, or conference submission link.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Organizers and contact</h2>
+      <p>
+        Organized by Your Name, Collaborator Name, and Collaborator Name.
+      </p>
+      <p>
+        Questions? Contact <a href="mailto:your.email@example.com">your.email@example.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Workshop on Human-Centred AI Systems. Hosted on GitHub Pages.
+  </footer>
+</body>
+</html>
