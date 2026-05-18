@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academic Workshop 2026</title>
-  <meta name="description" content="A concise academic workshop website hosted on GitHub Pages." />
+  <title>Workshop on Computational Models of Human Road User Behavior for Evaluation of Automated Vehicles</title>
+  <meta name="description" content="An event bringing together researchers and practitioners working on human behavior models and automated vehicles." />
   <style>
     :root {
       --bg: #f7f8fb;
@@ -17,6 +17,8 @@
     }
 
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -34,15 +36,15 @@
     }
 
     header h1 {
-      max-width: 920px;
+      max-width: 1040px;
       margin: 0 auto 18px;
-      font-size: clamp(2.1rem, 5vw, 4rem);
+      font-size: clamp(2rem, 5vw, 4rem);
       line-height: 1.08;
       letter-spacing: -0.04em;
     }
 
     header p {
-      max-width: 760px;
+      max-width: 800px;
       margin: 0 auto 28px;
       font-size: 1.2rem;
       opacity: 0.94;
@@ -62,7 +64,13 @@
       background: rgba(255, 255, 255, 0.16);
       border: 1px solid rgba(255, 255, 255, 0.28);
       backdrop-filter: blur(8px);
-      font-weight: 600;
+      font-weight: 650;
+    }
+
+    .pill a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .button {
@@ -71,7 +79,7 @@
       border-radius: 999px;
       background: white;
       color: var(--accent-dark);
-      font-weight: 700;
+      font-weight: 750;
       text-decoration: none;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     }
@@ -108,9 +116,7 @@
       padding: 42px 20px 64px;
     }
 
-    section {
-      margin: 0 0 34px;
-    }
+    section { margin: 0 0 34px; }
 
     .card {
       background: var(--card);
@@ -150,9 +156,53 @@
       margin: 0;
     }
 
-    ul {
-      padding-left: 22px;
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
+
+    .speaker {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fbfdff;
+    }
+
+    .speaker img,
+    .speaker .avatar-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: block;
+      object-fit: cover;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    }
+
+    .avatar-placeholder {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+    }
+
+    .speaker-body { padding: 18px; }
+
+    .speaker h3 {
+      margin: 0 0 4px;
+      font-size: 1.12rem;
+    }
+
+    .speaker p { margin: 0; color: var(--muted); }
+
+    .speaker a {
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    ul { padding-left: 22px; }
 
     footer {
       padding: 32px 20px;
@@ -171,14 +221,15 @@
 </head>
 <body>
   <header>
-    <h1>Workshop on Human-Centred AI Systems</h1>
-    <p>A one-day academic workshop bringing together researchers and practitioners working on safe, meaningful, and human-centred AI.</p>
+    <h1>Workshop on Computational Models of Human Road User Behavior for Evaluation of Automated Vehicles</h1>
+    <p>An event bringing together researchers and practitioners working on human behavior models and automated vehicles.</p>
     <div class="meta">
-      <span class="pill">June 15, 2026</span>
-      <span class="pill">Amsterdam, The Netherlands</span>
-      <span class="pill">Hybrid format</span>
+      <span class="pill">September 15, 2026</span>
+      <span class="pill">Naples, Italy</span>
+      <span class="pill">In-person</span>
+      <span class="pill">Part of the <a href="https://ieee-itsc.org/2026" target="_blank" rel="noopener">IEEE ITSC conference</a></span>
     </div>
-    <a class="button" href="#submit">Submit your paper</a>
+    <a class="button" href="#submit">Submit an abstract</a>
   </header>
 
   <nav>
@@ -196,7 +247,7 @@
     <section id="about" class="card">
       <h2>About the workshop</h2>
       <p>
-        This workshop explores how AI systems can be designed, evaluated, and governed in ways that preserve meaningful human agency and support responsible real-world deployment. We welcome empirical, theoretical, design, and policy-oriented contributions.
+        Virtual evaluation of automated vehicles (AVs) increasingly relies on models of human road user behavior. However, the development, validation, and application of such models is challenging. This event brings together researchers and practitioners to discuss advances and open questions in road user behavior modeling in the context of AV evaluation, focusing on model development and application for credible AV evaluation.
       </p>
     </section>
 
@@ -204,59 +255,77 @@
       <h2>Important dates</h2>
       <div class="grid">
         <div class="mini-card">
-          <h3>Submission deadline</h3>
-          <p>March 30, 2026</p>
+          <h3>Abstract submission deadline</h3>
+          <p>June 20, 2026</p>
         </div>
         <div class="mini-card">
-          <h3>Notification</h3>
-          <p>April 27, 2026</p>
+          <h3>Notification of acceptance</h3>
+          <p>June 25, 2026</p>
         </div>
         <div class="mini-card">
-          <h3>Camera-ready deadline</h3>
-          <p>May 18, 2026</p>
+          <h3>ITSC early-bird registration deadline</h3>
+          <p>June 30, 2026</p>
         </div>
         <div class="mini-card">
           <h3>Workshop date</h3>
-          <p>June 15, 2026</p>
+          <p>September 15, 2026</p>
         </div>
       </div>
     </section>
 
     <section id="speakers" class="card">
       <h2>Invited speakers</h2>
-      <div class="grid">
-        <div class="mini-card">
-          <h3>Speaker Name</h3>
-          <p>University or Organization</p>
-        </div>
-        <div class="mini-card">
-          <h3>Speaker Name</h3>
-          <p>University or Organization</p>
-        </div>
-        <div class="mini-card">
-          <h3>Speaker Name</h3>
-          <p>University or Organization</p>
-        </div>
+      <div class="speaker-grid">
+        <article class="speaker">
+          <img src="https://www.chalmers.se/_next/image/?q=90&url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fv10nydml%2Fbargman.jpg%3Fwidth%3D600%26height%3D600%26v%3D1d95dc9a07b8700%26quality%3D60%26format%3Dwebp&w=3840" alt="Portrait of Jonas Bärgman" />
+          <div class="speaker-body">
+            <h3><a href="https://www.chalmers.se/en/persons/bargman/" target="_blank" rel="noopener">Jonas Bärgman</a></h3>
+            <p>Professor, Vehicle Safety, Chalmers University of Technology</p>
+          </div>
+        </article>
+
+        <article class="speaker">
+          <img src="https://miro.medium.com/v2/resize%3Afill%3A176%3A176/1%2Axg76dwdgazjpBKw9qLjDjg.png" alt="Portrait of Biagio Ciuffo" />
+          <div class="speaker-body">
+            <h3><a href="https://www.researchgate.net/profile/Biagio-Ciuffo" target="_blank" rel="noopener">Biagio Ciuffo</a></h3>
+            <p>European Commission, Joint Research Centre</p>
+          </div>
+        </article>
+
+        <article class="speaker">
+          <img src="https://environment.leeds.ac.uk/images/resized/100x100-0-0-1-80-cropped_headshot___square___400x400.jpg" alt="Portrait of Gustav Markkula" />
+          <div class="speaker-body">
+            <h3><a href="https://environment.leeds.ac.uk/transport/staff/957/professor-gustav-markkula" target="_blank" rel="noopener">Gustav Markkula</a></h3>
+            <p>Chair in Applied Behaviour Modelling, University of Leeds</p>
+          </div>
+        </article>
+
+        <article class="speaker">
+          <div class="avatar-placeholder" aria-label="Portrait placeholder for Johan Engström">JE</div>
+          <div class="speaker-body">
+            <h3><a href="https://waymo.com/research/active-inference-as-a-general-framework-for-modeling-human-driving-behavior/" target="_blank" rel="noopener">Johan Engström</a></h3>
+            <p>Waymo</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="program" class="card">
       <h2>Preliminary program</h2>
       <ul>
-        <li>09:00 — Welcome and opening remarks</li>
-        <li>09:30 — Keynote talk</li>
-        <li>10:30 — Paper session I</li>
-        <li>12:00 — Lunch</li>
-        <li>13:30 — Interactive working groups</li>
-        <li>15:30 — Paper session II</li>
-        <li>17:00 — Closing discussion</li>
+        <li>Welcome and opening remarks</li>
+        <li>Invited talks</li>
+        <li>Contributed oral presentations</li>
+        <li>Poster session</li>
+        <li>Structured interactive discussion</li>
+        <li>Closing discussion and next steps</li>
       </ul>
     </section>
 
     <section id="submit" class="card">
-      <h2>Call for papers</h2>
+      <h2>Call for abstracts</h2>
       <p>
-        We invite short papers, position papers, work-in-progress reports, and demos. Submissions should be 2–4 pages, excluding references, and formatted according to the template of the host conference.
+        We invite abstracts on computational models of road user behavior, simulation-based AV evaluation, human driver reference models, human–AV interaction, model validation, and safety-critical scenarios.
       </p>
       <p>
         <a class="button" href="https://example.com" target="_blank" rel="noopener">Submission portal</a>
@@ -267,16 +336,16 @@
     <section id="contact" class="card">
       <h2>Organizers and contact</h2>
       <p>
-        Organized by Your Name, Collaborator Name, and Collaborator Name.
+        Organized by Arkady Zgonnikov, Luigi Pariota, Gustav Markkula, Johan Engström, and Jonas Bärgman.
       </p>
       <p>
-        Questions? Contact <a href="mailto:your.email@example.com">your.email@example.com</a>.
+        Questions? Contact <a href="mailto:a.zgonnikov@tudelft.nl">a.zgonnikov@tudelft.nl</a>.
       </p>
     </section>
   </main>
 
   <footer>
-    © 2026 Workshop on Human-Centred AI Systems. Hosted on GitHub Pages.
+    © 2026 Workshop on Computational Models of Human Road User Behavior for Evaluation of Automated Vehicles. Hosted on GitHub Pages.
   </footer>
 </body>
 </html>
