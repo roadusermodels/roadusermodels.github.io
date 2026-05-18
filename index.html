@@ -204,6 +204,43 @@
 
     ul { padding-left: 22px; }
 
+    .schedule {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fbfdff;
+    }
+
+    .schedule-time {
+      color: var(--accent-dark);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .schedule-title {
+      margin: 0;
+    }
+
+    .schedule-title strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
     footer {
       padding: 32px 20px;
       text-align: center;
@@ -249,6 +286,25 @@
       <p>
         Virtual evaluation of automated vehicles (AVs) increasingly relies on models of human road user behavior. However, the development, validation, and application of such models is challenging. This event brings together researchers and practitioners to discuss advances and open questions in road user behavior modeling in the context of AV evaluation, focusing on model development and application for credible AV evaluation.
       </p>
+      <p>Topics of interest include (but are not limited to)</p>
+      <ul>
+        <li>Cognitive/mechanistic modeling of human road user decision-making, perception, and interaction</li>
+        <li>Data-driven and generative AI models of behavior</li>
+        <li>Hybrid mechanistic and AI-based behavior modeling</li>
+        <li>Methods for validating and benchmarking road user behavior models for AV testing</li>
+        <li>Behavioral reference models for AVs, including models of “careful and competent” human drivers</li>
+        <li>Virtual human agents in simulation-based AV evaluation and testing</li>
+        <li>Use of road user behavior models by industry, government, and regulatory bodies</li>
+      </ul>
+
+      <p>
+        <strong>Important note:</strong> ITSC registration is required for attending the workshop. You can register for the workshop day only or for the full conference (<a href="https://ieee-itsc.org/2026/registration/" target="_blank" rel="noopener">see details here</a>). 
+
+We will send out abstract acceptance notifications by June 25 to ensure that workshop attendees can avail of early registration fees.
+        </p>
+
+        <p> In addition to the workshop, we are organizing an invited session during the main ITSC conference on the topic of road user behavior models. All ITSC attendees with full conference registration are welcome to join the invited session (the detailed schedule will be announced in due time). 
+        </p>
     </section>
 
     <section id="dates" class="card">
@@ -276,34 +332,27 @@
     <section id="speakers" class="card">
       <h2>Invited speakers</h2>
       <div class="speaker-grid">
-        <article class="speaker">
-          <img src="https://www.chalmers.se/_next/image/?q=90&url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fv10nydml%2Fbargman.jpg%3Fwidth%3D600%26height%3D600%26v%3D1d95dc9a07b8700%26quality%3D60%26format%3Dwebp&w=3840" alt="Portrait of Jonas Bärgman" />
-          <div class="speaker-body">
-            <h3><a href="https://www.chalmers.se/en/persons/bargman/" target="_blank" rel="noopener">Jonas Bärgman</a></h3>
-            <p>Professor, Vehicle Safety, Chalmers University of Technology</p>
-          </div>
-        </article>
 
         <article class="speaker">
           <img src="https://miro.medium.com/v2/resize%3Afill%3A176%3A176/1%2Axg76dwdgazjpBKw9qLjDjg.png" alt="Portrait of Biagio Ciuffo" />
           <div class="speaker-body">
-            <h3><a href="https://www.researchgate.net/profile/Biagio-Ciuffo" target="_blank" rel="noopener">Biagio Ciuffo</a></h3>
+            <h3><a href="https://www.linkedin.com/in/biagiociuffo/" target="_blank" rel="noopener">Biagio Ciuffo</a></h3>
             <p>European Commission, Joint Research Centre</p>
           </div>
         </article>
 
         <article class="speaker">
-          <img src="https://environment.leeds.ac.uk/images/resized/100x100-0-0-1-80-cropped_headshot___square___400x400.jpg" alt="Portrait of Gustav Markkula" />
+          <img src="https://imascientist.org.uk/wp-content/blogs.dir/505/files/2021/05/square-headshot-2021.jpg" alt="Portrait of Gustav Markkula" />
           <div class="speaker-body">
             <h3><a href="https://environment.leeds.ac.uk/transport/staff/957/professor-gustav-markkula" target="_blank" rel="noopener">Gustav Markkula</a></h3>
-            <p>Chair in Applied Behaviour Modelling, University of Leeds</p>
+            <p>University of Leeds</p>
           </div>
         </article>
 
         <article class="speaker">
-          <div class="avatar-placeholder" aria-label="Portrait placeholder for Johan Engström">JE</div>
+          <img src="https://confcats-siteplex.s3.us-east-1.amazonaws.com/iavvc25/Johan_Engstrom_231d453296.png">
           <div class="speaker-body">
-            <h3><a href="https://waymo.com/research/active-inference-as-a-general-framework-for-modeling-human-driving-behavior/" target="_blank" rel="noopener">Johan Engström</a></h3>
+            <h3><a href="https://www.linkedin.com/in/johan-engstr%C3%B6m-9635261//" target="_blank" rel="noopener">Johan Engström</a></h3>
             <p>Waymo</p>
           </div>
         </article>
@@ -311,26 +360,63 @@
     </section>
 
     <section id="program" class="card">
-      <h2>Preliminary program</h2>
-      <ul>
-        <li>Welcome and opening remarks</li>
-        <li>Invited talks</li>
-        <li>Contributed oral presentations</li>
-        <li>Poster session</li>
-        <li>Structured interactive discussion</li>
-        <li>Closing discussion and next steps</li>
-      </ul>
+      <h2>Schedule</h2>
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="schedule-time">09:00</div>
+          <p class="schedule-title">Welcome and opening remarks</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">09:10</div>
+          <p class="schedule-title"><strong>Biagio Ciuffo:</strong> “Careful and competent human driver as a behavior reference for AVs in EU/UN regulations”</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">09:40</div>
+          <p class="schedule-title"><strong>Gustav Markkula:</strong> “Hybrid AI/cognitive modeling of human road user behavior”</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">10:10</div>
+          <p class="schedule-title">Coffee break</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">10:30</div>
+          <p class="schedule-title">Contributed presentations</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">12:00</div>
+          <p class="schedule-title">Lunch + poster session</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">13:00</div>
+          <p class="schedule-title"><strong>Johan Engström:</strong> “Introducing SAE recommended practice on driving behavior reference models for AV evaluation”</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">13:30</div>
+          <p class="schedule-title">Contributed presentations</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">15:30</div>
+          <p class="schedule-title">Interactive discussion “The role of road user behavior models in the future of automated mobility”</p>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">16:20</div>
+          <p class="schedule-title">Closing remarks</p>
+        </div>
+      </div>
     </section>
 
     <section id="submit" class="card">
       <h2>Call for abstracts</h2>
       <p>
-        We invite abstracts on computational models of road user behavior, simulation-based AV evaluation, human driver reference models, human–AV interaction, model validation, and safety-critical scenarios.
+        We invite abstracts on computational models of road user behavior, their validation, and the use of such models in automated vehicle simulation or as safety reference models.
+
+Accepted abstracts will be presented as oral presentations or posters during the workshop, held in person on September 15, 2026, as part of IEEE ITSC 2026 in Naples, Italy.
+
+Abstracts based on previously published work are welcome, as are abstracts reporting work-in-progress. We encourage relevant submissions from academia, industry, policy-making, and standardization bodies, as well as other organizations involved in the design, testing, evaluation, regulation, or deployment of automated vehicles.
       </p>
       <p>
-        <a class="button" href="https://example.com" target="_blank" rel="noopener">Submission portal</a>
+        <a class="button" href="https://forms.gle/kabkt8PdRMJMecSu6" target="_blank" rel="noopener">Submit your abstract</a>
       </p>
-      <p class="muted">Replace the button link with your EasyChair, OpenReview, Google Form, or conference submission link.</p>
     </section>
 
     <section id="contact" class="card">
