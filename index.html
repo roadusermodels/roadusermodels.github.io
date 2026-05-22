@@ -239,33 +239,34 @@
 
     ul { padding-left: 22px; }
 
-    .talk-list {
+    .schedule {
       display: grid;
-      gap: 14px;
+      gap: 12px;
       margin-top: 18px;
     }
 
-    .talk-item {
-      padding: 18px 20px;
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 16px;
+      padding: 14px 16px;
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 16px;
       background: #fbfdff;
     }
 
-    .talk-item h3 {
-      margin: 0 0 4px;
-      font-size: 1.05rem;
+    .schedule-time {
+      color: var(--accent-dark);
+      font-weight: 800;
+      white-space: nowrap;
     }
 
-    .talk-item p {
+    .schedule-title {
       margin: 0;
-      color: var(--muted);
     }
 
-    .talk-title {
-      margin-top: 8px !important;
-      color: var(--text) !important;
-      font-style: italic;
+    .schedule-title strong {
+      color: var(--text);
     }
 
     footer {
@@ -418,64 +419,49 @@ Abstracts based on previously published work are welcome, as are abstracts repor
     </section>
 
     <section id="program" class="card">
-      <h2>List of talks</h2>
-      <div class="talk-list">
-        <div class="talk-item">
-          <h3>Biagio Ciuffo</h3>
-          <p>European Commission, Joint Research Centre</p>
-          <p class="talk-title">“Careful and competent human driver as a behavior reference for AVs in EU/UN regulations”</p>
+      <h2>Tentative schedule</h2>
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="schedule-time">09:00</div>
+          <p class="schedule-title">Welcome and opening remarks</p>
         </div>
-        <div class="talk-item">
-          <h3>Gustav Markkula</h3>
-          <p>University of Leeds</p>
-          <p class="talk-title">“Hybrid AI/cognitive modeling of human road user behavior”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">09:10</div>
+          <p class="schedule-title"><strong>Biagio Ciuffo:</strong> “Careful and competent human driver as a behavior reference for AVs in EU/UN regulations”</p>
         </div>
-        <div class="talk-item">
-          <h3>Johan Engström</h3>
-          <p>Waymo</p>
-          <p class="talk-title">“Introducing SAE recommended practice on driving behavior reference models for AV evaluation”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">09:40</div>
+          <p class="schedule-title"><strong>Gustav Markkula:</strong> “Hybrid AI/cognitive modeling of human road user behavior”</p>
         </div>
-        <div class="talk-item">
-          <h3>Jonas Bärgman</h3>
-          <p>Chalmers University of Technology</p>
-          <p class="talk-title">“On human behavior models for virtual safety impact assessment”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">10:10</div>
+          <p class="schedule-title">Coffee break</p>
         </div>
-        <div class="talk-item">
-          <h3>Julian Schumann</h3>
-          <p>TU Delft</p>
-          <p class="talk-title">“Active inference as a unified model of collision avoidance behavior in human drivers”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">10:30</div>
+          <p class="schedule-title">Contributed presentations</p>
         </div>
-        <div class="talk-item">
-          <h3>Sarvesh Kolekar</h3>
-          <p>Delta Eigen Technical Consultancy</p>
-          <p class="talk-title">“Human-like driving behaviour emerges from a risk-based driver model”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">12:00</div>
+          <p class="schedule-title">Lunch + poster session</p>
         </div>
-        <div class="talk-item">
-          <h3>Samir Hussein Ali Mohammad</h3>
-          <p>TU Delft</p>
-          <p class="talk-title">“General-Purpose LLMs As Models of Human Driver Behavior: The Case of Simplified Merging”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">13:00</div>
+          <p class="schedule-title"><strong>Johan Engström:</strong> “Introducing SAE recommended practice on driving behavior reference models for AV evaluation”</p>
         </div>
-        <div class="talk-item">
-          <h3>Riccardo Dona</h3>
-          <p>European Commission, Joint Research Centre</p>
-          <p class="talk-title">“Combining Evasive and Braking Reactions for Safety Reference Models in Automated Vehicles”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">13:30</div>
+          <p class="schedule-title">Contributed presentations</p>
         </div>
-        <div class="talk-item">
-          <h3>Malin Svärd</h3>
-          <p>Volvo Cars Safety Centre</p>
-          <p class="talk-title">“Quantification of Human Acceleration Behavior Across Speeds Using Real-World Driving Data”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">15:00</div>
+          <p class="schedule-title">Interactive discussion: “The role of road user behavior models in the future of automated mobility”</p>
         </div>
-        <div class="talk-item">
-          <h3>Arturo Tejada Ruiz</h3>
-          <p>TNO</p>
-          <p class="talk-title">“Bending the (traffic) rules, competent driver style!”</p>
+        <div class="schedule-item">
+          <div class="schedule-time">16:00</div>
+          <p class="schedule-title">Closing remarks</p>
         </div>
-        <div class="talk-item">
-          <h3>Lukas Brostek</h3>
-          <p>cogniBIT</p>
-          <p class="talk-title">“Driver behavior modeling for realistic human–AV interaction in simulation”</p>
-        </div>
-        </div>
+      </div>
     </section>
 
     <section id="contact" class="card">
