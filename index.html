@@ -84,6 +84,41 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     }
 
+    .conference-strip {
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .conference-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .conference-logo {
+      max-height: 110px;
+      max-width: 300px;
+      object-fit: contain;
+    }
+
+    .conference-text {
+      text-align: center;
+    }
+
+    .conference-text strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .conference-text span {
+      color: var(--muted);
+    }
+
     nav {
       position: sticky;
       top: 0;
@@ -204,41 +239,33 @@
 
     ul { padding-left: 22px; }
 
-    .schedule {
+    .talk-list {
       display: grid;
-      gap: 12px;
+      gap: 14px;
       margin-top: 18px;
     }
 
-    .schedule-item {
-      display: grid;
-      grid-template-columns: 78px 1fr;
-      gap: 16px;
-      padding: 14px 16px;
+    .talk-item {
+      padding: 18px 20px;
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 18px;
       background: #fbfdff;
     }
 
-    .schedule-time {
-      color: var(--accent-dark);
-      font-weight: 800;
-      white-space: nowrap;
+    .talk-item h3 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
     }
 
-    .schedule-title {
+    .talk-item p {
       margin: 0;
+      color: var(--muted);
     }
 
-    .schedule-title strong {
-      color: var(--text);
-    }
-
-    @media (max-width: 640px) {
-      .schedule-item {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
+    .talk-title {
+      margin-top: 8px !important;
+      color: var(--text) !important;
+      font-style: italic;
     }
 
     footer {
@@ -253,6 +280,8 @@
       header { padding: 54px 18px 48px; }
       .card { padding: 22px; }
       nav .inner { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+      .conference-inner { grid-template-columns: 1fr; text-align: center; }
+      .conference-logo { margin: 0 auto; }
     }
   </style>
 </head>
@@ -264,10 +293,25 @@
       <span class="pill">September 15, 2026</span>
       <span class="pill">Naples, Italy</span>
       <span class="pill">In-person</span>
-      <span class="pill">Part of the <a href="https://ieee-itsc.org/2026" target="_blank" rel="noopener">IEEE ITSC conference</a></span>
+      <span class="pill">Part of <a href="https://ieee-itsc.org/2026" target="_blank" rel="noopener">IEEE ITSC 2026</a></span>
     </div>
     <a class="button" href="https://forms.gle/2FVYDdv8nT9wu2f48">Submit an abstract</a>
   </header>
+
+  <section class="conference-strip" aria-label="Conference information">
+    <div class="conference-inner">
+      <a href="https://ieee-itss.org/" target="_blank" rel="noopener">
+        <img class="conference-logo" src="https://ieee-itsc.org/2026/wp-content/uploads/sites/6/2024/06/IEEE-ITSS-logo.jpg" alt="IEEE Intelligent Transportation Systems Society logo" />
+      </a>
+      <div class="conference-text">
+        <strong>Organized within the 2026 IEEE 29th International Conference on Intelligent Transportation Systems (ITSC 2026)</strong>
+        <span>This workshop is part of the official ITSC 2026 conference program.</span>
+      </div>
+      <a href="https://ieee-itsc.org/2026" target="_blank" rel="noopener">
+        <img class="conference-logo" src="https://ieee-itsc.org/2026/wp-content/uploads/sites/6/2025/04/vesuviostilizzatoexpanded.png" alt="ITSC 2026 logo" />
+      </a>
+    </div>
+  </section>
 
   <nav>
     <div class="inner">
@@ -329,6 +373,20 @@ We will send out abstract acceptance notifications by June 25 to ensure that wor
       </div>
     </section>
 
+        <section id="submit" class="card">
+      <h2>Call for abstracts</h2>
+      <p>
+        We invite abstracts on computational models of road user behavior, their validation, and the use of such models in automated vehicle simulation or as safety reference models.
+
+Accepted abstracts will be presented as oral presentations or posters during the workshop, held in person on September 15, 2026, as part of IEEE ITSC 2026 in Naples, Italy.
+
+Abstracts based on previously published work are welcome, as are abstracts reporting work-in-progress. We encourage relevant submissions from academia, industry, policy-making, and standardization bodies, as well as other organizations involved in the design, testing, evaluation, regulation, or deployment of automated vehicles.
+      </p>
+      <p>
+        <a class="button" href="https://forms.gle/kabkt8PdRMJMecSu6" target="_blank" rel="noopener">Submit an abstract</a>
+      </p>
+    </section>
+
     <section id="speakers" class="card">
       <h2>Invited speakers</h2>
       <div class="speaker-grid">
@@ -360,63 +418,64 @@ We will send out abstract acceptance notifications by June 25 to ensure that wor
     </section>
 
     <section id="program" class="card">
-      <h2>Schedule</h2>
-      <div class="schedule">
-        <div class="schedule-item">
-          <div class="schedule-time">09:00</div>
-          <p class="schedule-title">Welcome and opening remarks</p>
+      <h2>List of talks</h2>
+      <div class="talk-list">
+        <div class="talk-item">
+          <h3>Biagio Ciuffo</h3>
+          <p>European Commission, Joint Research Centre</p>
+          <p class="talk-title">“Careful and competent human driver as a behavior reference for AVs in EU/UN regulations”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">09:10</div>
-          <p class="schedule-title"><strong>Biagio Ciuffo:</strong> “Careful and competent human driver as a behavior reference for AVs in EU/UN regulations”</p>
+        <div class="talk-item">
+          <h3>Gustav Markkula</h3>
+          <p>University of Leeds</p>
+          <p class="talk-title">“Hybrid AI/cognitive modeling of human road user behavior”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">09:40</div>
-          <p class="schedule-title"><strong>Gustav Markkula:</strong> “Hybrid AI/cognitive modeling of human road user behavior”</p>
+        <div class="talk-item">
+          <h3>Johan Engström</h3>
+          <p>Waymo</p>
+          <p class="talk-title">“Introducing SAE recommended practice on driving behavior reference models for AV evaluation”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">10:10</div>
-          <p class="schedule-title">Coffee break</p>
+        <div class="talk-item">
+          <h3>Jonas Bärgman</h3>
+          <p>Chalmers University of Technology</p>
+          <p class="talk-title">“On human behavior models for virtual safety impact assessment”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">10:30</div>
-          <p class="schedule-title">Contributed presentations</p>
+        <div class="talk-item">
+          <h3>Julian Schumann</h3>
+          <p>TU Delft</p>
+          <p class="talk-title">“Active inference as a unified model of collision avoidance behavior in human drivers”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">12:00</div>
-          <p class="schedule-title">Lunch + poster session</p>
+        <div class="talk-item">
+          <h3>Sarvesh Kolekar</h3>
+          <p>Delta Eigen Technical Consultancy</p>
+          <p class="talk-title">“Human-like driving behaviour emerges from a risk-based driver model”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">13:00</div>
-          <p class="schedule-title"><strong>Johan Engström:</strong> “Introducing SAE recommended practice on driving behavior reference models for AV evaluation”</p>
+        <div class="talk-item">
+          <h3>Samir Hussein Ali Mohammad</h3>
+          <p>TU Delft</p>
+          <p class="talk-title">“General-Purpose LLMs As Models of Human Driver Behavior: The Case of Simplified Merging”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">13:30</div>
-          <p class="schedule-title">Contributed presentations</p>
+        <div class="talk-item">
+          <h3>Riccardo Dona</h3>
+          <p>European Commission, Joint Research Centre</p>
+          <p class="talk-title">“Combining Evasive and Braking Reactions for Safety Reference Models in Automated Vehicles”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">15:30</div>
-          <p class="schedule-title">Interactive discussion “The role of road user behavior models in the future of automated mobility”</p>
+        <div class="talk-item">
+          <h3>Malin Svärd</h3>
+          <p>Volvo Cars Safety Centre</p>
+          <p class="talk-title">“Quantification of Human Acceleration Behavior Across Speeds Using Real-World Driving Data”</p>
         </div>
-        <div class="schedule-item">
-          <div class="schedule-time">16:20</div>
-          <p class="schedule-title">Closing remarks</p>
+        <div class="talk-item">
+          <h3>Arturo Tejada Ruiz</h3>
+          <p>TNO</p>
+          <p class="talk-title">“Bending the (traffic) rules, competent driver style!”</p>
         </div>
-      </div>
-    </section>
-
-    <section id="submit" class="card">
-      <h2>Call for abstracts</h2>
-      <p>
-        We invite abstracts on computational models of road user behavior, their validation, and the use of such models in automated vehicle simulation or as safety reference models.
-
-Accepted abstracts will be presented as oral presentations or posters during the workshop, held in person on September 15, 2026, as part of IEEE ITSC 2026 in Naples, Italy.
-
-Abstracts based on previously published work are welcome, as are abstracts reporting work-in-progress. We encourage relevant submissions from academia, industry, policy-making, and standardization bodies, as well as other organizations involved in the design, testing, evaluation, regulation, or deployment of automated vehicles.
-      </p>
-      <p>
-        <a class="button" href="https://forms.gle/kabkt8PdRMJMecSu6" target="_blank" rel="noopener">Submit your abstract</a>
-      </p>
+        <div class="talk-item">
+          <h3>Lukas Brostek</h3>
+          <p>cogniBIT</p>
+          <p class="talk-title">“Driver behavior modeling for realistic human–AV interaction in simulation”</p>
+        </div>
+        </div>
     </section>
 
     <section id="contact" class="card">
