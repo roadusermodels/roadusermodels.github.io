@@ -641,12 +641,14 @@
 </section>
 	
    <section id="contributed-talks" class="card">
-  <h2>Contributed talks</h2>
+  <h2>Contributed and spotlight talks</h2>
 
   <p>
     The contributed program features recent work on behavioral reference models,
     simulation of surrounding road users, and fundamental approaches to
-    computational modeling of human road user behavior.
+    computational modeling of human road user behavior. 
+	<br/> 
+	Papers accepted to ITSC invited session will be highlighted in short spotlight presentations.
   </p>
 
   <div class="contributed-list">
@@ -1059,8 +1061,95 @@
       </div>
     </details>
 
+<details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Quantification of Human Acceleration Behavior across Speeds Using Real-World Driving Data
+          </h3>
+          <p class="talk-presenter">
+            <strong>Malin Svärd</strong> · Volvo Cars
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+         Safety and comfort of automated driving systems
+(ADS) heavily rely on understanding characteristics of manual
+human driving behavior. Acceleration patterns play a central
+role in this, and being able to statistically model these patterns
+would enable a behavioral reference which can be used to support
+comfort and motion plausibility in ADS design. This paper
+presents a large-scale analysis of how positive and negative
+longitudinal acceleration distributions vary with longitudinal
+vehicle speed, using more than 64 million data points collected
+across several countries, primarily in Europe and the United
+States. The data set forms the basis for probabilistic modeling
+of how human acceleration behavior changes across speeds,
+with boundaries captured by gamma-based statistical models.
+The results disclose a progressive narrowing of acceleration
+variance as speed increases, accompanied by a simultaneous
+decrease in maximum acceleration. Despite the contraction observed
+for extreme values, the 99th percentile of the acceleration
+distribution remains relatively constant within ± 2.5 m/s2 across
+speeds. This study provides a continuous estimation of the joint
+speed-acceleration distribution and derives a corresponding
+speed-acceleration envelope. The findings can inform the design
+and safety assessment of ADS and advanced driver assistance
+systems (ADAS), contributing toward human-like longitudinal
+control strategies.
+        </p>
+      </div>
+    </details>
+<details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+General-purpose LLMs as Models of Human Driver Behavior:
+The Case of Simplified Merging
+          </h3>
+          <p class="talk-presenter">
+            <strong>Samir Hussein Ali Mohammad</strong> · Delft University of Technology
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+		Human behavior models are essential as behavior
+references and for simulating human agents in virtual safety
+assessment of automated vehicles (AVs), yet current models
+face a trade-off between interpretability and flexibility. Generalpurpose
+large language models (LLMs) offer a promising alternative:
+a single model potentially deployable without parameter
+fitting across diverse scenarios. However, what LLMs can
+and cannot capture about human driving behavior remains
+poorly understood. We address this gap by embedding two
+general-purpose LLMs (OpenAI o3 and Google Gemini 2.5 Pro)
+as standalone, closed-loop driver agents in a simplified onedimensional
+merging scenario and comparing their behavior
+against human data using quantitative and qualitative analyses.
+Both models reproduce human-like intermittent operational
+control and tactical dependencies on spatial cues. However,
+neither consistently captures the human response to dynamic
+velocity cues, and safety performance diverges sharply between
+models. A systematic prompt ablation study reveals that prompt
+components act as model-specific inductive biases that do not
+transfer across LLMs. These findings suggest that generalpurpose
+LLMs could potentially serve as standalone, readyto-
+use human behavior models in AV evaluation pipelines, but
+future research is needed to better understand their failure
+modes and ensure their validity as models of human driving
+behavior.
+		</p>
+      </div>
+    </details>
+
   </div>
 </section>
+
+
 
     <section id="schedule" class="card">
       <h2>Schedule</h2>
