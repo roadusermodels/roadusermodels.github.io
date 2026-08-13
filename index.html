@@ -284,8 +284,217 @@
       .conference-inner { grid-template-columns: 1fr; text-align: center; }
       .conference-logo { margin: 0 auto; }
     }
+
+.keynote-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.keynote {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fbfdff;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.keynote:hover {
+  border-color: #c7d7e8;
+  box-shadow: 0 4px 14px rgba(30, 70, 110, 0.08);
+}
+
+.keynote > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.keynote-images {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.keynote-images img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.keynote-body {
+  min-width: 0;
+}
+
+.keynote-body h3 {
+  margin: 0 0 9px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.keynote-body p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.keynote-body a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.keynote-body a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .keynote {
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .keynote > img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .keynote-images img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .keynote-body h3 {
+    font-size: 1rem;
+  }
+}	
+
+  .contributed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .contributed-talk {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #fbfdff;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contributed-talk:hover {
+    border-color: #c7d7e8;
+    box-shadow: 0 4px 14px rgba(30, 70, 110, 0.08);
+  }
+
+  .contributed-talk summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .contributed-talk summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .contributed-talk summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #eef4f9;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .contributed-talk[open] summary::after {
+    content: "−";
+    background: var(--accent);
+    color: white;
+  }
+
+  .contributed-talk summary:hover {
+    background: #f7fafc;
+  }
+
+  .talk-summary {
+    min-width: 0;
+  }
+
+  .talk-title {
+    margin: 0 0 7px;
+    font-size: 1.08rem;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .talk-presenter {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .talk-presenter strong {
+    color: var(--text);
+  }
+
+  .talk-abstract {
+    border-top: 1px solid var(--border);
+    padding: 20px 22px 22px;
+    background: white;
+  }
+
+  .talk-abstract-label {
+    margin: 0 0 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+
+  .talk-abstract p {
+    margin: 0;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  @media (max-width: 640px) {
+    .contributed-talk summary {
+      padding: 16px 17px;
+      gap: 12px;
+    }
+
+    .talk-title {
+      font-size: 1rem;
+    }
+
+    .talk-abstract {
+      padding: 17px;
+    }
+  }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Workshop on Computational Models of Human Road User Behavior for Evaluation of Automated Vehicles</h1>
@@ -296,7 +505,6 @@
       <span class="pill">In-person</span>
       <span class="pill">Part of <a href="https://ieee-itsc.org/2026" target="_blank" rel="noopener">IEEE ITSC 2026</a></span>
     </div>
-    <a class="button" href="https://forms.gle/2FVYDdv8nT9wu2f48">Submit an abstract</a>
   </header>
 
   <section class="conference-strip" aria-label="Conference information">
@@ -317,11 +525,10 @@
   <nav>
     <div class="inner">
       <a href="#about">About</a>
-      <a href="#dates">Dates</a>
-      <a href="#speakers">Speakers</a>
-      <a href="#program">Program</a>
-      <a href="#submit">Submit</a>
-      <a href="#contact">Contact</a>
+      <a href="#keynotes">Keynote speakers</a>
+      <a href="#contributed-talks">Contributed talks</a>
+      <a href="#schedule">Schedule</a>
+	  <a href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -344,112 +551,523 @@
 
       <p>
         <strong>Important note:</strong> ITSC registration is required for attending the workshop. You can register for the workshop day only or for the full conference (<a href="https://ieee-itsc.org/2026/registration/" target="_blank" rel="noopener">see details here</a>). 
-
-We will send out abstract acceptance notifications by June 25 to ensure that workshop attendees can avail of early registration fees.
         </p>
 
         <p> In addition to the workshop, we are organizing an invited session during the main ITSC conference on the topic of road user behavior models. All ITSC attendees with full conference registration are welcome to join the invited session (the detailed schedule will be announced in due time). 
         </p>
     </section>
 
-    <section id="dates" class="card">
-      <h2>Important dates</h2>
-      <div class="grid">
-        <div class="mini-card">
-          <h3>Abstract submission deadline</h3>
-          <p>June 20, 2026</p>
-        </div>
-        <div class="mini-card">
-          <h3>Notification of acceptance</h3>
-          <p>June 25, 2026</p>
-        </div>
-        <div class="mini-card">
-          <h3>ITSC early-bird registration deadline</h3>
-          <p>June 30, 2026</p>
-        </div>
-        <div class="mini-card">
-          <h3>Workshop date</h3>
-          <p>September 15, 2026</p>
-        </div>
+   
+	
+	<section id="keynotes" class="card">
+  <h2>Keynote speakers</h2>
+
+  <div class="keynote-list">
+
+    <article class="keynote">
+      <img src="https://miro.medium.com/v2/resize%3Afill%3A176%3A176/1%2Axg76dwdgazjpBKw9qLjDjg.png" alt="Portrait of Biagio Ciuffo">
+      <div class="keynote-body">
+        <h3>Driving behaviour models to operationalize the international regulatory framework for the safety approval of automated vehicles</h3>
+        <p>
+          <strong><a href="https://www.linkedin.com/in/biagiociuffo/" target="_blank" rel="noopener">Biagio Ciuffo</a></strong><br>
+          European Commission – Joint Research Centre
+        </p>
       </div>
-    </section>
+    </article>
 
-        <section id="submit" class="card">
-      <h2>Call for abstracts</h2>
-      <p>
-        We invite abstracts on computational models of road user behavior, their validation, and the use of such models in automated vehicle simulation or as safety reference models.
-
-Accepted abstracts will be presented as oral presentations or posters during the workshop, held in person on September 15, 2026, as part of IEEE ITSC 2026 in Naples, Italy.
-
-Abstracts based on previously published work are welcome, as are abstracts reporting work-in-progress. We encourage relevant submissions from academia, industry, policy-making, and standardization bodies, as well as other organizations involved in the design, testing, evaluation, regulation, or deployment of automated vehicles.
-      </p>
-      <p>
-        <a class="button" href="https://forms.gle/kabkt8PdRMJMecSu6" target="_blank" rel="noopener">Submit an abstract</a>
-      </p>
-    </section>
-
-    <section id="speakers" class="card">
-      <h2>Invited speakers</h2>
-      <div class="speaker-grid">
-
-        <article class="speaker">
-          <img src="https://miro.medium.com/v2/resize%3Afill%3A176%3A176/1%2Axg76dwdgazjpBKw9qLjDjg.png" alt="Portrait of Biagio Ciuffo" />
-          <div class="speaker-body">
-            <h3><a href="https://www.linkedin.com/in/biagiociuffo/" target="_blank" rel="noopener">Biagio Ciuffo</a></h3>
-            <p>European Commission, Joint Research Centre</p>
-          </div>
-        </article>
-
-        <article class="speaker">
-          <img src="https://imascientist.org.uk/wp-content/blogs.dir/505/files/2021/05/square-headshot-2021.jpg" alt="Portrait of Gustav Markkula" />
-          <div class="speaker-body">
-            <h3><a href="https://environment.leeds.ac.uk/transport/staff/957/professor-gustav-markkula" target="_blank" rel="noopener">Gustav Markkula</a></h3>
-            <p>University of Leeds</p>
-          </div>
-        </article>
-
-        <article class="speaker">
-          <img src="https://media.licdn.com/dms/image/v2/C4D03AQFRuBxIn5L_RA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1613924831500?e=2147483647&v=beta&t=2vn0oUc4gdjRCZZuu5wQMychuthD1UQtxgWRRVyh8Uc">
-          <div class="speaker-body">
-            <h3><a href="https://www.linkedin.com/in/manel-hammouda-a57530101/" target="_blank" rel="noopener">Manel Hammouda</a></h3>
-            <p>BMW</p>
-          </div>
-        </article>
-
-        <article class="speaker">
-          <img src="https://confcats-siteplex.s3.us-east-1.amazonaws.com/iavvc25/Johan_Engstrom_231d453296.png">
-          <div class="speaker-body">
-            <h3><a href="https://www.linkedin.com/in/johan-engstr%C3%B6m-9635261//" target="_blank" rel="noopener">Johan Engström</a></h3>
-            <p>Waymo</p>
-          </div>
-        </article>
-
-        <article class="speaker">
-          <img src="https://www.chalmers.se/_next/image/?q=90&url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fv10nydml%2Fbargman.jpg%3Fwidth%3D600%26height%3D600%26v%3D1d95dc9a07b8700%26quality%3D60%26format%3Dwebp&w=3840" alt="Portrait of Jonas Bärgman" />
-          <div class="speaker-body">
-            <h3><a href="https://www.chalmers.se/en/persons/bargman/" target="_blank" rel="noopener">Jonas Bärgman</a></h3>
-            <p>Chalmers University of Technology</p>
-          </div>
-        </article>
-
-        <article class="speaker">
-          <img src="JARI_S_Kitajima.jpg" />
-          <div class="speaker-body">
-            <h3><a href="https://www.linkedin.com/in/sou-kitajima-678192112/" target="_blank" rel="noopener">Sou Kitajima</a></h3>
-            <p>Japan Automobile Research Institute</p>
-          </div>
-        </article>
-
-        <article class="speaker">
-          <img src="JARI_H_Nakamura.jpg" />
-          <div class="speaker-body">
-            <h3><a href="https://www.linkedin.com/in/hiroki-nakamura-b42942bb/" target="_blank" rel="noopener">Hiroki Nakamura</a></h3>
-            <p>Japan Automobile Research Institute</p>
-          </div>
-        </article>
+    <article class="keynote">
+      <img src="https://www.chalmers.se/_next/image/?q=90&url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fv10nydml%2Fbargman.jpg%3Fwidth%3D600%26height%3D600%26v%3D1d95dc9a07b8700%26quality%3D60%26format%3Dwebp&w=3840" alt="Portrait of Jonas Bärgman">
+      <div class="keynote-body">
+        <h3>Representativeness in ADS safety impact assessment (and training): baseline and traffic-agent challenges</h3>
+        <p>
+          <strong><a href="https://www.chalmers.se/en/persons/bargman/" target="_blank" rel="noopener">Jonas Bärgman</a></strong><br>
+          Chalmers University of Technology
+        </p>
       </div>
-    </section>
+    </article>
 
+    <article class="keynote">
+      <img src="https://media.licdn.com/dms/image/v2/C4D03AQFRuBxIn5L_RA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1613924831500?e=2147483647&v=beta&t=2vn0oUc4gdjRCZZuu5wQMychuthD1UQtxgWRRVyh8Uc" alt="Portrait of Manel Hammouda">
+      <div class="keynote-body">
+        <h3>Cognition and Reward: A Dual Perspective on Driver Behavior Modeling</h3>
+        <p>
+          <strong><a href="https://www.linkedin.com/in/manel-hammouda-a57530101/" target="_blank" rel="noopener">Manel Hammouda</a></strong><br>
+          BMW Group
+        </p>
+      </div>
+    </article>
+
+    <article class="keynote">
+      <img src="https://confcats-siteplex.s3.us-east-1.amazonaws.com/iavvc25/Johan_Engstrom_231d453296.png" alt="Portrait of Johan Engström">
+      <div class="keynote-body">
+        <h3>SAE J3330: Toward a shared language for driving behavior reference models</h3>
+        <p>
+          <strong><a href="https://www.linkedin.com/in/johan-engstr%C3%B6m-9635261/" target="_blank" rel="noopener">Johan Engström</a></strong><br>
+          Waymo
+        </p>
+      </div>
+    </article>
+
+    <article class="keynote">
+      <div class="keynote-images">
+        <img src="JARI_H_Nakamura.jpg" alt="Portrait of Hiroki Nakamura">
+        <img src="JARI_S_Kitajima.jpg" alt="Portrait of Sou Kitajima">
+      </div>
+      <div class="keynote-body">
+        <h3>Defining Safety Boundaries for Automated Driving Systems: From real traffic data to computational human road-user models</h3>
+        <p>
+          <strong>
+            <a href="https://www.linkedin.com/in/hiroki-nakamura-b42942bb/" target="_blank" rel="noopener">Hiroki Nakamura</a>
+            &amp;
+            <a href="https://www.linkedin.com/in/sou-kitajima-678192112/" target="_blank" rel="noopener">Sou Kitajima</a>
+          </strong><br>
+          Japan Automobile Research Institute
+        </p>
+      </div>
+    </article>
+
+    <article class="keynote">
+      <img src="https://imascientist.org.uk/wp-content/blogs.dir/505/files/2021/05/square-headshot-2021.jpg" alt="Portrait of Gustav Markkula">
+      <div class="keynote-body">
+        <h3>Mechanistic, machine-learned, and hybrid modelling of road user behaviour</h3>
+        <p>
+          <strong><a href="https://environment.leeds.ac.uk/transport/staff/957/professor-gustav-markkula" target="_blank" rel="noopener">Gustav Markkula</a></strong><br>
+          University of Leeds
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+	
+   <section id="contributed-talks" class="card">
+  <h2>Contributed talks</h2>
+
+  <p>
+    The contributed program features recent work on behavioral reference models,
+    simulation of surrounding road users, and fundamental approaches to
+    computational modeling of human road user behavior.
+  </p>
+
+  <div class="contributed-list">
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Prudent Attentive Sober (PAS) Driver Definition in US National Crash Data and its Application to Human Behavioral Models
+          </h3>
+          <p class="talk-presenter">
+            <strong>Kevin Kefauver</strong> · Virginia Tech Transportation Institute (VTTI)
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          Retrospective evaluations of automated vehicle (AV) safety performance
+          typically compare AV crash rates to those of the general driving
+          population. However, this may include crashes involving risky,
+          impaired, distracted, or otherwise non-compliant driver behavior. An
+          alternative approach is to benchmark AV performance against a
+          behaviorally defined subset of competent and compliant human drivers.
+          <br><br>
+          This work introduces an initial behavioral reference model derived
+          from U.S. national crash data (NCD) that classifies prudent,
+          attentive, and sober (PAS) drivers by removing vehicle crashes with
+          evidence of imprudent, inattentive, or non-sober driving. PAS drivers
+          are identified using exclusion criteria derived from variables
+          available in police-reported crash data, including indicators of
+          impairment, distraction, speeding, and traffic violations. Example
+          findings are given for light passenger vehicles in police-reported
+          crashes.
+          <br><br>
+          Beyond supporting retrospective AV safety comparisons, the PAS
+          framework provides an empirical characterization of behavior
+          consistent with emerging concepts of "careful and competent" human
+          driving. As such, it can be used to complement behavioral definitions
+          used in regulatory and industry approaches to AV evaluation. The
+          resulting PAS population will serve as a data-driven benchmark for
+          estimating the safety impacts of specific behavioral constraints and
+          for quantifying the crash reductions associated with excluding
+          specific forms of unsafe driving behavior.
+          <br><br>
+          The presentation will discuss how PAS relates to computational
+          definitions of desirable driving, including the UNECE Competent and
+          Careful Human Driver framework and the NIEON driver behavior model,
+          and examine which behavioral constructs from such models can be
+          operationalized using NCD. PAS-based filtering will help inform the
+          development and evaluation of behavioral reference models used in AV
+          safety assessment, contributing to more interpretable and
+          policy-relevant AV safety benchmarks.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Risk perception and braking reaction model of competent and careful human drivers in safety-critical cut-in scenarios: validation against test-track experiments and comparison with regulatory models
+          </h3>
+          <p class="talk-presenter">
+            <strong>Giovanni Albano</strong> · University of Naples Federico II
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          This study examines how competent and careful human drivers perceive
+          risk and initiate braking in safety-critical motorway cut-in
+          scenarios. It relies on evidence from controlled test-track
+          experiments in which professional drivers reacted to a robotic
+          surrogate vehicle executing sudden, unindicated cut-ins under
+          varying speeds, gaps, and lateral velocities. The data are first
+          used to evaluate the two human benchmark models in UNECE Regulation
+          No. 157. Although no crash occurred in the experiments, regulatory
+          models classified about 68% of the manoeuvres as unpreventable,
+          revealing a mismatch between model predictions and observed
+          behaviour. This mismatch mainly reflects an inadequate
+          representation of risk perception and delayed reaction onsets.
+          <br><br>
+          A new driver model is therefore derived from the data. The analysis
+          identifies the dynamic cues governing risk perception, with cut-in
+          yaw rate emerging as the dominant predictor. Reaction onset is
+          represented as a discrete-time hazard process and selected through
+          double Monte Carlo cross-validation, separating model discovery from
+          out-of-sample assessment. Braking behaviour is modelled using a
+          Gipps-based formulation, which proved more accurate than the
+          regulatory models and the IDM in reproducing the observed emergency
+          braking dynamics.
+          <br><br>
+          The resulting model provides a more credible human-driver benchmark
+          than regulatory models for automated-driving safety assessment in
+          safety-critical cut-in situations.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Beyond benchmark metrics: a cognitive driver model as a behavioral reference for AV evaluation
+          </h3>
+          <p class="talk-presenter">
+            <strong>Christian Rössert</strong> · cogniBIT GmbH
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          Evaluation of automated vehicles depends on models of human road
+          user behavior. Data-driven and generative models dominate practice
+          and are assessed with likelihood-based distribution-matching scores.
+          We argue such scores, dominated by routine driving, are ill-suited to
+          credible AV evaluation: a model can score well while failing on the
+          rare, safety-relevant events that contribute little to the mean.
+          <br><br>
+          We illustrate failure modes these metrics miss using SMART, a
+          state-of-the-art trajectory generation transformer model, on the
+          Waymo Open Dataset. In sparsely represented high-speed scenes, the
+          model overshoots laterally and leaves the road, and when tested in
+          emergency conflicts it produces implausible responses that do not
+          match human brake reaction. We thus propose extending evaluation
+          metrics to better reflect the full range of relevant driving
+          behavior.
+          <br><br>
+          We then present the latest developments in driveBOT, a mechanistic
+          cognitive driver model built on the cogniBOT architecture,
+          representing perception, cognition, and motor control without
+          fitting to benchmark data. It reproduces routine traffic and
+          replicates naturalistic-driving effects, including
+          surprise-modulated emergency braking, and now adds inattentive and
+          impaired driving through distraction and alcohol-impairment
+          variants. We discuss its use as a behavioral reference model,
+          arguing that hybrid mechanistic and AI-based approaches are needed
+          for credible AV behavior modeling.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Drive with Style: Style-Conditioned Self-Play for Behaviorally Diverse Traffic Simulation
+          </h3>
+          <p class="talk-presenter">
+            <strong>Saeed Rahmani</strong> · Delft University of Technology
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          Human driving behavior is heterogeneous, and reproducing this
+          heterogeneity in simulation is essential for automated vehicle (AV)
+          validation. We present Style-Conditioned Self-Play (SCSP), a
+          closed-loop multi-agent model that makes driving style an explicit,
+          controllable, per-agent input grounded in human trajectories. In the
+          proposed method, a variational autoencoder learns a style latent from
+          human kinematic data, and a multi-agent policy is then trained by
+          combining PPO self-play with style-conditioned behavior cloning.
+          <br><br>
+          This ties each style value to real driving behavior, so that changing
+          the input changes the agent's behavior in a continuous and
+          predictable way. At test time, different agents can be given
+          different driving styles using a single trained policy. We assess
+          SCSP along three properties relevant to AV validation. Behavioral
+          realism is confirmed by a WOSAC score above 0.7. Style controllability
+          is demonstrated by showing that a single style input can move agents
+          behavior smoothly from a cautious, low-risk style to an aggressive,
+          higher-risk one, without loss in realism.
+          <br><br>
+          Relevance for AV validation is shown by evaluating an ego planner in
+          heterogeneous traffic generated by SCSP. Exposing the planner to
+          heterogeneous traffic doubles its collision rate from 2.2% to 4.6%
+          and drops its goal completion rate from 96.5% to 87.2%, relative to
+          homogeneous traffic. These results show SCSP provides a scalable,
+          human-grounded solution for generating heterogeneous traffic.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Driver World Models: Unified Representations of Drivers in Semi-Automated Driving
+          </h3>
+          <p class="talk-presenter">
+            <strong>Arash Tavakoli</strong> · Villanova University
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          Driving is fundamentally an interaction between humans and
+          intelligent systems. Yet, computational representations of drivers
+          remain fragmented, often focusing on isolated aspects such as gaze
+          behavior, or takeover actions. We argue that the next frontier of
+          human-centered automation is the development of Driver World Models
+          (DWMs): unified autoregressive models that characterize drivers’
+          attention, and actions as a function of dynamic traffic context.
+          <br><br>
+          In this talk, we first introduce the DWM conceptual framework which
+          represents the driver as a temporally evolving system whose internal
+          states, external behaviors, interactions with automation, and
+          surrounding context jointly shape driving behavior. We will then
+          present a prototype of the aforementioned framework based on
+          autoregressive generative models trained on multimodal behavioral and
+          psycho-physiological driver data collected from controlled
+          semi-automated driving experiments.
+          <br><br>
+          Using DWM, we further distinguish between General DWMs, which
+          characterize population-level driver behavior and can generate
+          realistic virtual road users for simulation and automated vehicle
+          evaluation, and Personalized DWMs, which capture the unique
+          characteristics of individual drivers offering a pathway toward
+          humanized automated vehicles.
+          <br><br>
+          We conclude by discussing the research directions for establishing
+          DWM as a new paradigm for computational human behavior modeling and
+          human-centered intelligent transportation systems.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Active Inference as a model of human driving behavior
+          </h3>
+          <p class="talk-presenter">
+            <strong>Julian Frederik Schumann</strong> · TU Delft
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          Driving requires humans to continuously perceive, predict, and act
+          under uncertainty while pursuing multiple goals, from collision
+          avoidance to efficient and socially coordinated interaction with
+          other road users. However, existing computational models that explain
+          human driving behavior are typically fragmented, focusing on
+          specific scenarios or isolated aspects of behavior. Active inference
+          has recently emerged as a principled computational and generalizable
+          framework for modeling such adaptive behavior through the
+          minimization of expected free energy.
+          <br><br>
+          Here, we present a series of active inference models that together
+          provide a unified account of human driving behavior. We mainly focus
+          on how active inference can offer a closed-loop explanation of
+          collision avoidance across diverse traffic scenarios, reproducing
+          empirical findings on response timing, maneuver selection, and
+          execution. We then briefly discuss extensions of the same framework
+          to interactive driving behavior (and the role of traffic rules and
+          communication therein) and the modeling of affective state.
+          <br><br>
+          These extensions demonstrate how active inference naturally
+          generalizes to increasingly complex aspects of driving, including
+          interactions between road users and the influence of emotional state
+          on decision-making, without requiring a fundamentally different
+          modeling approach. Together, these results highlight active
+          inference's promise for understanding and modeling human driving
+          behavior.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Bending the (traffic) rules, competent driver style!
+          </h3>
+          <p class="talk-presenter">
+            <strong>Arturo Tejada Ruiz</strong> · Integrated Vehicle Safety, TNO
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          This presentation introduces TNO’s research on competent driving as
+          a reference for assessing Automated Driving Systems (ADS). While
+          regulations increasingly refer to the behaviour of a “competent and
+          careful human driver,” the concept remains difficult to define and
+          measure. TNO approaches competent driving from a Safety-II
+          perspective, focusing not only on avoiding failures or collisions,
+          but also on preserving the everyday interactions that make traffic
+          safe, predictable and socially acceptable.
+          <br><br>
+          The work translates competent driving into practical specifications
+          for ADS assessment. Driving manuals, traffic rules and expert
+          knowledge are formalized into mathematical descriptions of
+          behaviour, covering temporal, spatial, ordinal and dynamic
+          relationships relevant to operational and tactical driving. These
+          specifications are calibrated using empirical data from professional
+          CCV-D1 drivers, who provide a candidate reference for competent
+          highway driving.
+          <br><br>
+          The resulting assertion ranges can be used to evaluate whether
+          automated vehicles behave within defensible bounds of competent
+          driving, rather than simply checking compliance with fixed rules.
+          Deviations can then be assessed in terms of frequency, severity,
+          duration and recovery. The talk aims to stimulate expert discussion
+          on the assumptions and limitations of this approach, and on how
+          competent driving can be made explicit, measurable and useful for
+          the safe introduction of automated vehicles.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            A Scenario-Based Grading Framework for ADS/ADAS Consumer-Testing Campaigns Benchmarked Against a Probabilistic Human Driver Model
+          </h3>
+          <p class="talk-presenter">
+            <strong>Federico Scari</strong> · RDW
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          Consumer-testing campaigns such as Euro NCAP offer established
+          procedures for ADAS but none for ADS, and existing protocols do not
+          capture how automated behaviour compares to real human drivers. This
+          contribution presents a scenario-based virtual-testing and grading
+          framework, developed in the Horizon Europe project i4Driving
+          (Deliverable D6.6, led by RDW), extending Euro NCAP/UN R157-01-style
+          evaluation to ADS and ADAS consumer testing.
+          <br><br>
+          The framework follows a Scenario-Environment-Analysis structure
+          (D6.1), aligned with the SUNRISE Safety Assurance Framework, and
+          grades collision-avoidance, regulatory safety-distance/deceleration
+          criteria, and comfort, weighted by scenario difficulty. The i4Driving
+          probabilistic human driver model library, calibrated and validated
+          against real-driver data, serves as the benchmark for interpreting
+          automated behaviour.
+          <br><br>
+          A key outcome is that human-driver models provide an essential
+          reference point for interpreting ADS/ADAS behaviour: a human baseline
+          indicates whether a system struggles in scenarios that are also
+          challenging for humans, or whether deficiencies are system-specific,
+          and helps identify cases where a system is technically safe but
+          uncomfortable, relevant to user acceptance.
+          <br><br>
+          Overall, this work supports virtual testing as a scalable, flexible
+          tool for consumer-testing and shows that human-baseline models can
+          strengthen future ADS/ADAS evaluation protocols by providing a fair,
+          realistic, behaviour-based benchmark.
+        </p>
+      </div>
+    </details>
+
+    <details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+            Task-oriented scoring of driver behaviour models for automated driving systems evaluation
+          </h3>
+          <p class="talk-presenter">
+            <strong>Yueyang Wang</strong> · University of Leeds
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+          An important aspect in evaluating an automated driving system (ADS)
+          is how it behaves in safety critical scenarios. Computational driver
+          behaviour models are created for ADS validation, evaluation, and
+          benchmarking. However, it remains unclear how such models should be
+          scored when used as reference models.
+          <br><br>
+          We develop and demonstrate a task-oriented scoring framework for
+          driver behaviour models in collision avoidance scenarios. The
+          framework decomposes collision avoidance behaviour into
+          safety-relevant aspects of the response and compares model behaviour
+          with human reference behaviour. We apply it to six human collision
+          avoidance scenarios and evaluate four driver model variants: a
+          no-response baseline, a reaction-time braking model, and
+          deterministic and probabilistic optimal-control models.
+          <br><br>
+          For each model, we calculate safety-relevant behavioural metrics and
+          assess whether the model reproduces the effects of scenario
+          conditions compared to human data. Preliminary results show that the
+          framework provides both an overall model ranking and a diagnostic
+          breakdown of where models align with or differ from human data. This
+          helps identify whether a model reproduces specific aspects of
+          collision avoidance behaviour, rather than judging it as good or
+          bad.
+          <br><br>
+          We also highlight open questions, including a more robust response-
+          time definition, pass/fail scoring criteria for practical automated
+          vehicle benchmarking, and future application of the framework to
+          automated vehicle policies.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+    <section id="schedule" class="card">
+      <h2>Schedule</h2>
+      <p>
+Detailed scheduled will be announced in early September.
+      </p>
+    </section>
 
     <section id="contact" class="card">
       <h2>Organizers and contact</h2>
