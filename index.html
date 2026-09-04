@@ -502,7 +502,7 @@
     <div class="meta">
       <span class="pill">September 15, 2026</span>
       <span class="pill">Naples, Italy</span>
-      <span class="pill">In-person</span>
+      <span class="pill">Stazione Marittima, Room Calipso</span>
       <span class="pill">Part of <a href="https://ieee-itsc.org/2026" target="_blank" rel="noopener">IEEE ITSC 2026</a></span>
     </div>
   </header>
@@ -525,14 +525,16 @@
   <nav>
     <div class="inner">
       <a href="#about">About</a>
+	  <a href="#schedule">Schedule</a>
       <a href="#keynotes">Keynote speakers</a>
-      <a href="#contributed-talks">Contributed talks</a>
-      <a href="#schedule">Schedule</a>
+      <a href="#contributed-talks">Contributed talks</a>      
 	  <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <main>
+
+  
     <section id="about" class="card">
       <h2>About the workshop</h2>
       <p>
@@ -553,11 +555,21 @@
         <strong>Important note:</strong> ITSC registration is required for attending the workshop. You can register for the workshop day only or for the full conference (<a href="https://ieee-itsc.org/2026/registration/" target="_blank" rel="noopener">see details here</a>). 
         </p>
 
-        <p> In addition to the workshop, we are organizing an invited session during the main ITSC conference on the topic of road user behavior models. All ITSC attendees with full conference registration are welcome to join the invited session (the detailed schedule will be announced in due time). 
+        <p> In addition to the workshop, we are organizing an <strong>invited session</strong> during the main ITSC conference on the topic of road user behavior models. All ITSC attendees with full conference registration are welcome to join it on <strong>Thursday, September 17, at 10:00 (Room Perseide)</strong>. 
         </p>
     </section>
 
-   
+         <section id="schedule" class="card">
+      <h2>Schedule</h2>
+      <p>
+		<iframe
+  src="ITSC driver behavior modeling workshop schedule-4.pdf"
+  width="100%"
+  height="600"
+  style="border: none;"
+></iframe>
+      </p>
+    </section>
 	
 	<section id="keynotes" class="card">
   <h2>Keynote speakers</h2>
@@ -1145,18 +1157,50 @@ behavior.
 		</p>
       </div>
     </details>
-
+<details class="contributed-talk">
+      <summary>
+        <div class="talk-summary">
+          <h3 class="talk-title">
+Combining Evasive and Braking Reactions for Safety Reference Models in Automated Vehicles
+          </h3>
+          <p class="talk-presenter">
+            <strong>Konstantinos Mattas</strong> · European Commission – Joint Research Centre
+          </p>
+        </div>
+      </summary>
+      <div class="talk-abstract">
+        <p class="talk-abstract-label">Abstract</p>
+        <p>
+		 Computational models of careful and competent
+human drivers are essential for scenario-based evaluation of
+automated driving systems (ADS). However, most existing
+safety reference models primarily focus on longitudinal braking,
+neglecting the role of evasive steering in human collision
+avoidance. This paper proposes a hybrid Fuzzy-Safety Model
+(FSM-H) that integrates longitudinal mitigation and lateral
+avoidance within a unified behavioral framework. The braking
+component is governed by Proactive Fuzzy Safety (PFS) metrics,
+representing the erosion of longitudinal safety margins, while
+the steering component is driven by Criticality Fuzzy Safety
+for lane-change (CFS-LC), capturing lateral conflict severity
+and maneuver feasibility. A finite-state architecture models
+the sequential escalation from nominal driving to braking
+and, when necessary, to evasive steering, incorporating percep-
+tion–reaction time and lane-check delays to reflect human de-
+cision processes. The model is evaluated in reconstructed high-
+criticality cut-in scenarios and compared with braking-only and
+steering-only reference strategies. Results show that the hybrid
+approach expands the preventability envelope while maintain-
+ing behavioral plausibility and computational tractability. The
+proposed framework provides a transparent and explainable
+human reference model suitable for simulation-based ADS
+safety benchmarking and regulatory assessment.
+		</p>
+      </div>
+    </details>
   </div>
 </section>
 
-
-
-    <section id="schedule" class="card">
-      <h2>Schedule</h2>
-      <p>
-Detailed scheduled will be announced in early September.
-      </p>
-    </section>
 
     <section id="contact" class="card">
       <h2>Organizers and contact</h2>
